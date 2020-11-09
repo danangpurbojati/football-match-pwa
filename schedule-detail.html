@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>EPL Fixtures</title>
+  <meta name="description" content="EPL Fixtures" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/materialize.min.css" />
+  <link rel="stylesheet" href="./css/custom.css">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#000000">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- pwa link & meta tag -->
+  <link rel="shortcut icon" href="./images/logo/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./images/logo/icon192x192.png">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#000000">
+</head>
+
+<body>
+  <!-- Navigasi -->
+  <nav class="black darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo left" id="logo-container">EPLFixs</a>
+      <a href="./index.html#fixture" class="topnav right" data-target="nav-mobile">
+        <i class="material-icons">arrow_back</i>
+      </a>
+    </div>
+  </nav>
+  <!-- Akhir Navigasi -->
+
+
+  <div class="schedule-detail">
+    <div class="schedule-info animate-test" id="detail-match">
+      <div class="background-custom">
+        <div class="preload-center">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large blue" id="save">
+      <i class="large material-icons">save</i>
+    </a>
+    <a style="display: none;" class="btn-floating btn-large red" id="delete">
+      <i class="large material-icons">delete</i>
+    </a>
+  </div>
+
+  <!-- <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script> -->
+  <script src="js/materialize.min.js"></script>
+  
+  <script src="js/api.js"></script>
+  <script src="js/idb.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/schedule-detail.js"></script>
+  
+  <script src="js/sw-register.js"></script>
+
+
+</body>
+
+</html>
