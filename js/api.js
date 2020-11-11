@@ -84,17 +84,6 @@ const detailFixtureHtml = data => {
 const getStandings = () => {
     const url = 'https://api.football-data.org/v2/competitions/2021/standings';
 
-    if ("caches" in window) {
-        caches.match(url)
-            .then(response => {
-                if (response) {
-                    response.json().then(data => {
-                        standingHtml(data);
-                    })
-                }
-            })
-    }
-
     fetch(url, { headers: { 'X-Auth-Token': API } })
         .then(response => response.json())
         .then(responseJson => {
@@ -109,17 +98,6 @@ const getStandings = () => {
 // Get Fixture Data
 const getFixtures = () => {
     const url = 'https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED';
-
-    if ("caches" in window) {
-        caches.match(url)
-            .then(response => {
-                if (response) {
-                    response.json().then(data => {
-                        fixtureHtml(data);
-                    })
-                }
-            })
-    }
 
     fetch(url, { headers: { 'X-Auth-Token': API } })
         .then(response => response.json())
@@ -138,17 +116,6 @@ const getDetailFixture = () => {
         let urlParams = new URLSearchParams(window.location.search);
         let idParam = urlParams.get("id");
         let url = `https://api.football-data.org/v2/matches/${idParam}`;
-        if ("caches" in window) {
-            caches.match(url)
-                .then(response => {
-                    if (response) {
-                        response.json().then(data => {
-                            detailFixtureHtml(data);
-                            resolve(data);
-                        })
-                    }
-                })
-        }
 
         fetch(url, { headers: { 'X-Auth-Token': API } })
             .then(response => response.json())

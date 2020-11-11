@@ -33,7 +33,9 @@ if (workbox) {
         { url: "/images/logo/icon96x96.png", revision: '1' },
         { url: "/images/logo/icon72x72.png", revision: '1' },
         { url: "/images/logo/favicon.ico", revision: '1' }
-    ]);
+    ], {
+      ignoreUrlParametersMatching: [/.*/]
+    });
 
     workbox.routing.registerRoute(
         new RegExp('/pages/'),
@@ -48,13 +50,7 @@ if (workbox) {
             cacheName: 'api-football',
         })
     );
-   
-    
-    workbox.routing.registerRoute(
-        new RegExp("/schedule-detail.html"),
-        workbox.strategies.cacheFirst({})
-    );
-
+  
     workbox.routing.registerRoute(
         /.*(?:googleapis|gstatic)\.com/,
         workbox.strategies.staleWhileRevalidate({
